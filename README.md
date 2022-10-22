@@ -1,4 +1,6 @@
-# Clean method to swap variables
+# Swap variables elegantly in C#
+
+[Post](https://medium.com/@NelsonBN/swap-variables-elegantly-in-c-c7aa7c7fb651)
 
 ## Approach
 
@@ -11,7 +13,7 @@ var aux = a;
 a = b;
 b = aux;
 ```
-Check here the [IL](https://sharplab.io/#v2:C4LglgNgNAJiDUAfAAgJgIwFgBQyDMABGgQMIEDeOB1RhyALAQLIAUAlBVTdwG4CGAJwJ8CAXgLoADAG4u3avyEAjMQVQy58zb0HCArgA9VfWdnk0R4pafPUV4voZs0AvjhdA===) result.
+[Check here the resulted IL](https://sharplab.io/#v2:C4LglgNgPgAgTARgLACgYGYAE9MGFMDeqmJ2WMALJgLIAUAlIcaSwG4CGATpu5gLyYEABgDczFiQ7cARv0xxR4iUpa12AGkzTGA2tM3t6YlCwC+qU0A=)
 
 ### With tuple
 ```csharp
@@ -20,16 +22,16 @@ var b = 20;
 
 (a, b) = (b, a);
 ```
-Check here the [IL](https://sharplab.io/#v2:C4LglgNgNAJiDUAfAAgJgIwFgBQyDMABGgQMIEDeOB1RhyALAQLIAUAlBVTdwG4CGAJwJ8CAXgLoADAG4u3avyEAjMQVQy58zdxZ8oBJR3Esl+vm1nZuAXxzWgA=) result.
+[Check here the resulted IL](https://sharplab.io/#v2:C4LglgNgPgAgTARgLACgYGYAE9MGFMDeqmJ2WMALJgLIAUAlIcaSwG4CGATpu5gLyYEABgDczFiQ7cARv0xxR4iUrZceAVwAec9mJQTSvAdL0GSsgey2nSAX1S2gA===)
 
 
 ## Benchmark
 
 ### For primitive types
-![SwapPrimitivesBenchmarks](./docs/SwapPrimitivesBenchmarks.png)
+![SwapPrimitivesBenchmarks](./media/SwapPrimitivesBenchmarks.png)
 
 ### For classes
-![SwapClassesBenchmarks](./docs/SwapClassesBenchmarks.png)
+![SwapClassesBenchmarks](./media/SwapClassesBenchmarks.png)
 
 
 ## Conclusion
@@ -37,3 +39,8 @@ Check here the [IL](https://sharplab.io/#v2:C4LglgNgNAJiDUAfAAgJgIwFgBQyDMABGgQM
 In both cases the performance difference is not measurable.
 
 The only difference is that the tuple approach is more readable and less error prone. So, use it! 🤓
+
+
+## References
+* [Tuple types (C# reference)](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples)
+* [Deconstructing tuples and other types](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
